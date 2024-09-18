@@ -32,6 +32,14 @@
           tag         = version;
           config.Cmd  = "${bin}/bin/${appName}";
         };
+
+        devInputs = with pkgs; [
+          go
+          gopls
+          golangci-lint
+          delve
+          gomod2nix.packages.${system}.default
+        ];
       in
       {
         packages = {
@@ -40,19 +48,31 @@
           inherit docker;
         };
 
-        devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            go
-            gopls
-            golangci-lint
-            delve
-            gomod2nix.packages.${system}.default
-          ];
-
-          shellHook = ''
+        devShells = {
+          default = pkgs.mkShell {
+            buildInputs = devInputs;
+            shellHook = ''
             echo "Go version: $(go version)"
             go run main.go
-          '';
+            '';
+          };
+          vscode = pkgs.mkShell {
+            buildInputs = with pkgs; [
+              vscode
+            ] ++ devInputs;
+            shellHook = ''
+              code .
+            '';
+          };
+          nvim = pkgs.mkShell {
+            buildInputs = with pkgs; [
+              neovim
+            ] ++ devInputs;
+            shellHook = ''
+              alias vim=nvim
+              nvim
+            '';
+          };
         };
       });
 }
