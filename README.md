@@ -30,7 +30,7 @@ Nix develop can be used to open an interactive sub-shell within our nix environm
 
 This allows us to develop our software with the exact binary dependencies it will later be built with.
 
-[![nix develop](./Docs/Images/flake-latte.gif)]
+![nix develop](./Docs/Images/flake-latte.gif)
 
 #### Develop in Editor
 
@@ -42,6 +42,8 @@ export NIXPKGS_ALLOW_UNFREE=1 # As VSCode has an unfree license we need to allow
 
 nix develop .#vscode --impure # Impure instructs nix to pull ENVs from our existing shell into the sub-shell.
 ```
+
+> To enable unfree packages globally in a system see [this documentation](https://nixos.wiki/wiki/Unfree_Software)
 
 ##### VIM/NVIM
 ```bash
