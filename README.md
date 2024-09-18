@@ -14,7 +14,7 @@ The only prerequisites to run the code in this repository is to have git, and ni
 
 For nix, the multi-user install is recommended. You can find guides on how to install nix on your system [here](https://nixos.org/download/)
 
-To use nix flakes you will also need to enabled the `nix-command` and `nix-flakes` experimental features. 
+To use nix flakes you will also need to enable the `nix-command` and `nix-flakes` experimental features. 
 
 For most installations this can be done by pasting the following code in a `nix.conf` file at `~/.config/nix/nix.conf`
 
