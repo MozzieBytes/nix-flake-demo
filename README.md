@@ -52,13 +52,13 @@ nix develop .#vim
 
 Nix build enables us to build the outputs defined in our flakes.
 
-[![nix build](./Docs/Images/flake-build.gif)]
+![nix build](./Docs/Images/flake-build.gif)
 
 ### Nix Run
 
 Nix Run builds and runs the outputs defined in our flakes. Allowing us to interact with 
 
-[![nix run](./Docs/Images/flake-run.gif)]
+![nix run](./Docs/Images/flake-run.gif)
 
 ### Nix Build (Docker Output)
 
@@ -66,7 +66,7 @@ We've added a docker build output to our nix flake that creates a docker image f
 
 For a better explanation of why we might want to use Nix to build our docker images rather than the Docker Builder, I recommend [this talk by Xe Iaso](https://xeiaso.net/talks/2024/nix-docker-build/).
 
-[![nix build .#docker](./Docs/Images/flake-docker.gif)]
+![nix build .#docker](./Docs/Images/flake-docker.gif)
 
 ## Technologies
 [![Skill Icons](https://go-skill-icons.vercel.app/api/icons?i=go,nix)](https://github.com/lelouchfr/skill-icons)
